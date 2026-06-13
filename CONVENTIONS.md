@@ -7,23 +7,24 @@ timestamp: 2026-06-13T00:00:00Z
 
 # 概要
 
-このドキュメントは、各プロジェクトの `Knowledge~/` バンドルを運用するための共通ルールを定める。
+このドキュメントは、各プロジェクトの `Knowledge/` バンドルを運用するための共通ルールを定める。
 すべてのバンドルは [OKF v0.1](./OKF-SPEC.md) に準拠する。
 
-このファイルは各プロジェクトに `Knowledge~/conventions/CONVENTIONS.md` として **読み取り専用** で埋め込まれる。
+このファイルは各プロジェクトに `Knowledge/conventions/CONVENTIONS.md` として **読み取り専用** で埋め込まれる。
 ここを編集する場合は中央リポジトリ `okf-conventions` で行うこと。
 
 # ディレクトリ規約
 
-各プロジェクトの知識バンドルは `Knowledge~/` に置く。
+各プロジェクトの知識バンドルは **プロジェクトルート直下の `Knowledge/`** に置く。
 
-- Unity プロジェクトでは末尾の `~` により Unity のアセット import 対象から除外される。
-- 非 Unity プロジェクトでも統一のため同じ `Knowledge~/` を使う。
+- Unity がアセットとして import するのは `Assets/` の中だけなので、ルート直下に置けば
+  名前に関わらず Unity に取り込まれない (`Docs/` 等と同じ)。よって末尾 `~` は不要。
+- 非 Unity プロジェクトでも統一のため同じ `Knowledge/` を使う。
 
 標準構成:
 
 ```
-Knowledge~/
+Knowledge/
 ├── index.md            # バンドル目次 + okf_version 宣言 (frontmatter は index のみ許可)
 ├── log.md              # 更新履歴 (新しい順)
 ├── conventions/        # この規約リポジトリ (submodule・読み取り専用)
